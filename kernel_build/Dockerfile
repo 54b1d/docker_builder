@@ -55,6 +55,6 @@ RUN curl -sL https://raw.githubusercontent.com/crazyuploader/Bash/master/install
 RUN git config --global user.email "sabidul1@gmail.com" && git config --global user.name "54b1d"
 
 # Setting up an environment variable
-ENV GCC ~/home/gcc-arm64/bin/aarch64-elf-
+ENV CROSS_COMPILE ~/home/gcc-arm64/bin/aarch64-elf-
 
 CMD ["bash"]
