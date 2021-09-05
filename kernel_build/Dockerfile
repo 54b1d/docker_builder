@@ -28,9 +28,6 @@ RUN apt-get install -y \
 # Fix locale issues
 RUN echo echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
-# Custom Functions
-RUN curl -sL https://raw.githubusercontent.com/crazyuploader/Misc/master/functions >> ~/.bashrc
-
 # Removing all unused packages
 RUN apt-get -y autoremove --purge
 
