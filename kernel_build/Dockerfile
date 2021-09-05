@@ -23,7 +23,10 @@ RUN apt-get -y upgrade
 RUN apt-get install -y \
                     curl git python bc tar make wget gcc libssl-dev \
                     zip unzip ca-certificates gpg gpg-agent ssh \
-                    nano vim xz-utils tmux screen jq tree 1> /dev/null
+                    nano vim xz-utils tmux screen jq tree locales 1> /dev/null
+
+# Fix locale issues
+RUN echo echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
 # Install tmate
 RUN curl -sL https://raw.githubusercontent.com/crazyuploader/Bash/master/install/tmate.sh | bash -
