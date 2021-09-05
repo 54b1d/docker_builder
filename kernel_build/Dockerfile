@@ -42,19 +42,19 @@ RUN apt-get clean && \
 RUN mkdir -p ~/home
 
 # ARM_64 Cross Compiler
-RUN printf "Cloning Toolchains and any kernel...\n" && \
-    echo "Getting AOSP ARM Cross Compiler..." && \
-    cd ~/home && \
-    git clone --progress -j 16 --depth 1 --single-branch https://github.com/54b1d/gcc-arm64 -b gcc-master gcc-arm64 && \
-    git clone --depth 1 --single-branch https://github.com/54b1d/AnyKernel3 -b tortoise anykernel
+#RUN printf "Cloning Toolchains and any kernel...\n" && \
+#    echo "Getting AOSP ARM Cross Compiler..." && \
+#    cd ~/home && \
+#    git clone --progress -j 16 --depth 1 --single-branch https://github.com/54b1d/gcc-arm64 -b gcc-master gcc-arm64 && \
+#    git clone --depth 1 --single-branch https://github.com/54b1d/AnyKernel3 -b tortoise anykernel
 
 # Install ffsend
-RUN curl -sL https://raw.githubusercontent.com/crazyuploader/Bash/master/install/ffsend.sh | bash -
+#RUN curl -sL https://raw.githubusercontent.com/crazyuploader/Bash/master/install/ffsend.sh | bash -
 
 # Setting Git Identity
 RUN git config --global user.email "sabidul1@gmail.com" && git config --global user.name "54b1d"
 
 # Setting up an environment variable
-ENV CROSS_COMPILE ~/home/gcc-arm64/bin/aarch64-elf-
+#ENV CROSS_COMPILE ~/home/gcc-arm64/bin/aarch64-elf-
 
 CMD ["bash"]
