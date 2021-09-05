@@ -57,4 +57,7 @@ RUN git config --global user.email "sabidul1@gmail.com" && git config --global u
 # Setting up an environment variable
 #ENV CROSS_COMPILE ~/home/gcc-arm64/bin/aarch64-elf-
 
+ENV LC_CTYPE en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 CMD ["bash"]
