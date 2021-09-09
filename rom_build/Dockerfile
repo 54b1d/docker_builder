@@ -18,7 +18,7 @@ RUN apt update && apt -y upgrade
 
 # Installing required packages
 RUN apt install -y \
-                    install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python python2.7 python-pip android-tools-adb android-tools-fastboot locales 1> /dev/null
+                    git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python python2.7 python-pip android-tools-adb android-tools-fastboot locales 1> /dev/null
 
 # Removing all unused packages
 RUN apt -y autoremove --purge
