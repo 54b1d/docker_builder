@@ -14,20 +14,16 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TERM=xterm-256color
 
 # Updating apt packages list
-RUN apt update && apt -y upgrade
+RUN apt-get update && apt-get -y upgrade
 
 # Installing required packages
-<<<<<<< HEAD
 RUN apt-get install -y git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python python2.7 python-pip python3-pip android-tools-adb android-tools-fastboot locales 1> /dev/null
-=======
-RUN apt install -y git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python android-tools-adb android-tools-fastboot locales 1> /dev/null
->>>>>>> f949c42ca6e96ac262fe773f8e81455470aa5117
 
 # Removing all unused packages
-RUN apt -y autoremove --purge
+RUN apt-get -y autoremove --purge
 
 # APT clean up
-RUN apt clean && \
+RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Directory to store cross-compilers
