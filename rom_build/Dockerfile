@@ -22,6 +22,9 @@ RUN apt-get install -y git-core gnupg flex bison gperf build-essential zip curl 
 # Removing all unused packages
 RUN apt-get -y autoremove --purge
 
+#Install rclone
+RUN curl https://rclone.org/install.sh | bash
+
 # APT clean up
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
